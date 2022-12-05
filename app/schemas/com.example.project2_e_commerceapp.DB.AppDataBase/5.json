@@ -1,0 +1,276 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 5,
+    "identityHash": "f28eb7d69f27f66e4a33533eb8517e6f",
+    "entities": [
+      {
+        "tableName": "applog_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mLogId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mItem` TEXT, `mCost` TEXT, `mGenre` TEXT, `mCondition` TEXT, `mUserSelling` TEXT, `mUserId` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mLogId",
+            "columnName": "mLogId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mItem",
+            "columnName": "mItem",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCost",
+            "columnName": "mCost",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mGenre",
+            "columnName": "mGenre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCondition",
+            "columnName": "mCondition",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserSelling",
+            "columnName": "mUserSelling",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserId",
+            "columnName": "mUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mLogId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "USER_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mUserId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mFirstName` TEXT, `mLastName` TEXT, `mUserName` TEXT, `mPassword` TEXT, `mIsAdmin` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mUserId",
+            "columnName": "mUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mFirstName",
+            "columnName": "mFirstName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mLastName",
+            "columnName": "mLastName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserName",
+            "columnName": "mUserName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mPassword",
+            "columnName": "mPassword",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mIsAdmin",
+            "columnName": "mIsAdmin",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mUserId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CART_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mcartId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mItem` TEXT, `mCost` TEXT, `mGenre` TEXT, `mCondition` TEXT, `mUserSelling` TEXT, `mUserId` INTEGER NOT NULL, `mBuyerId` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mcartId",
+            "columnName": "mcartId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mItem",
+            "columnName": "mItem",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCost",
+            "columnName": "mCost",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mGenre",
+            "columnName": "mGenre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCondition",
+            "columnName": "mCondition",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserSelling",
+            "columnName": "mUserSelling",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserId",
+            "columnName": "mUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mBuyerId",
+            "columnName": "mBuyerId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mcartId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ORDERS_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mOrderId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mItem` TEXT, `mCost` TEXT, `mGenre` TEXT, `mCondition` TEXT, `mUserSelling` TEXT, `mUserId` INTEGER NOT NULL, `mBuyerId` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mOrderId",
+            "columnName": "mOrderId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mItem",
+            "columnName": "mItem",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCost",
+            "columnName": "mCost",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mGenre",
+            "columnName": "mGenre",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCondition",
+            "columnName": "mCondition",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserSelling",
+            "columnName": "mUserSelling",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mUserId",
+            "columnName": "mUserId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mBuyerId",
+            "columnName": "mBuyerId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mOrderId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "EASTEREGG_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mEggNumber` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mEggNumberId` INTEGER NOT NULL, `mClicked` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mEggNumber",
+            "columnName": "mEggNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mEggNumberId",
+            "columnName": "mEggNumberId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mClicked",
+            "columnName": "mClicked",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mEggNumber"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f28eb7d69f27f66e4a33533eb8517e6f')"
+    ]
+  }
+}
